@@ -1,0 +1,5 @@
+git
+*/prev.rev
+*/*.changelog
+*/mapnik_*
+*/mapnik2_*
