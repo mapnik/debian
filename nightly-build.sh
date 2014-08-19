@@ -43,7 +43,6 @@ PACKAGES["2.1.x"]="mapnik"
 PACKAGES["2.0.x"]="mapnik"
 
 # Ubuntu Distributions to build (space-separated)
-# TODO: different dists per branch?
 declare -A DISTS
 DISTS["master"]="trusty utopic"
 DISTS["2.3.x"]="trusty saucy precise lucid utopic"
@@ -59,7 +58,7 @@ OPT_FORCE=""
 OPT_CLEAN=""
 OPT_BUILDREV="1"
 BRANCHES_TO_BUILD="${!BRANCHES[@]}"
-DISTS_TO_BUILD="${!DISTS[@]}"
+OPT_BUILDDISTS=""
 while getopts "fncr:b:d:" OPT; do
     case $OPT in
         c)
@@ -77,7 +76,7 @@ while getopts "fncr:b:d:" OPT; do
            ;;
         d)
            # Jenkins does stupid things with quotes
-           DISTS_TO_BUILD=$(echo $OPTARG | sed s/\"//g)
+           OPT_BUILDDISTS=$(echo $OPTARG | sed s/\"//g)
            ;;
         r)
            OPT_BUILDREV="$OPTARG"
@@ -166,6 +165,13 @@ for BRANCH in ${BRANCHES_TO_BUILD}; do
 
     pushd $BRANCH
     echo "Build Version ${BUILD_VERSION}"
+    DISTS_TO_BUILD=${DISTS[$BRANCH]}
+    echo "Dists to build for $BRANCH: $DISTS_TO_BUILD"
+    if [ ! -z "$OPT_BUILDDISTS" ]; then
+        DISTS_TO_BUILD=$OPT_BUILDDISTS
+        echo "> Overriding to dists: $OPT_BUILDDISTS"
+    fi
+
     for DIST in $DISTS_TO_BUILD; do
         echo "Building $DIST ..."
         DIST_VERSION="${BUILD_VERSION}-${OPT_BUILDREV}~${DIST}1"
