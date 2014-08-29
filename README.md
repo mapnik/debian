@@ -70,7 +70,7 @@ the correctly named PPA's:
 
 10) Re-run a single trunk build because you've fixed debian/ stuff, do
    
-    ./nightly-builds.sh -f -b trunk -r 2
+    ./nightly-build.sh -f -b trunk -r 2
 
 
 ## Notes
