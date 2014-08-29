@@ -23,8 +23,8 @@ sudo apt-get install debhelper devscripts dput git-core python
 
 1) Clone the packaging repo and enter debian dir:
 
-    git clone git://github.com/mapnik/mapnik-packaging.git
-    cd mapnik-packaging/debian-nightlies
+    git clone git://github.com/mapnik/debian.git mapnik-debian
+    cd mapnik-debian
 
 2) Clone the mapnik git repo from https://github.com/mapnik/mapnik into a git/ dir:
 
@@ -37,8 +37,10 @@ Note: if you change the launchpad username then you will also need to ensure you
 the correctly named PPA's:
 
     nightly-trunk
-    nightly-0.7
     nightly-2.0
+    nightly-2.1
+    nightly-2.2
+    nightly-2.3
 
 
 4) Set prev.rev in each branch directory to be the current revision of the branch
@@ -46,10 +48,14 @@ the correctly named PPA's:
     cd git
     git checkout master
     git log -1 --pretty=format:%h > ../master/prev.rev
-    git checkout 0.7.x
-    git log -1 --pretty=format:%h > ../0.7.x/prev.rev
     git checkout 2.0.x
     git log -1 --pretty=format:%h > ../2.0.x/prev.rev
+    git checkout 2.1.x
+    git log -1 --pretty=format:%h > ../2.1.x/prev.rev
+    git checkout 2.2.x
+    git log -1 --pretty=format:%h > ../2.2.x/prev.rev
+    git checkout 2.3.x
+    git log -1 --pretty=format:%h > ../2.3.x/prev.rev
     cd ../
     
 5) Run `./nightly-build.sh -f -d` to make sure it works (you should see usage)
