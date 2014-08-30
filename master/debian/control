@@ -5,6 +5,8 @@ Uploaders: Robert Coup <robert@coup.net.nz>
 Build-Depends:
  clang-3.4,
  make,
+ libstdc++6 (>= 4.8.0),
+ libstdc++-4.8-dev,
  git-core,
  python-support (>= 0.8.4),
  python-nose,
