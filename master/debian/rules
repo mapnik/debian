@@ -34,7 +34,6 @@ endif
 
 override_dh_auto_configure:
 	./configure $(SCONS_FLAGS) CUSTOM_CXXFLAGS="$(CFLAGS)"
-	dh_auto_configure
 
 # Do no build for every possible python version until this is working properly
 # https://github.com/mapnik/mapnik-packaging/issues/3
