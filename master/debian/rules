@@ -6,6 +6,8 @@ export DH_VERBOSE=1
 
 # scons flags
 SCONS_FLAGS=INPUT_PLUGINS=csv,gdal,geojson,topojson,ogr,osm,postgis,raster,shape,sqlite \
+CC=/usr/bin/clang \
+CXX=/usr/bin/clang++ \
 CUSTOM_CXXFLAGS="-fvisibility-inlines-hidden -fvisibility=hidden" \
 CAIRO=True \
 COLOR_PRINT=False \
