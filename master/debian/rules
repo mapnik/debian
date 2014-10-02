@@ -49,6 +49,9 @@ override_dh_auto_configure:
 #
 #	dh_auto_build
 
+override_dh_auto_build:
+	JOBS=2 make
+
 override_dh_prep:
 	dh_prep -Xdebian/tmp
 
