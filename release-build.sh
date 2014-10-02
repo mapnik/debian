@@ -28,8 +28,8 @@ tar xf mapnik-v${BUILD_VERSION}.tar.bz2
 mv mapnik-v${BUILD_VERSION} "${SOURCE}"
 tar cjf "${ORIG_TAR}" "${SOURCE}/"
 
-git clone https://github.com/mapnik/mapnik-packaging
-cp -r "mapnik-packaging/debian-nightlies/2.2.x/debian" "${SOURCE}/"
+git clone https://github.com/mapnik/debian
+cp -r "debian/2.2.x/debian" "${SOURCE}/"
 
 CHANGELOG_NOTE="v${BUILD_VERSION} release (https://github.com/mapnik/mapnik/wiki/Release${BUILD_VERSION})"
 
