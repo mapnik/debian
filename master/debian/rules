@@ -6,9 +6,7 @@ export DH_VERBOSE=1
 
 # scons flags
 SCONS_FLAGS=INPUT_PLUGINS=csv,gdal,geojson,topojson,ogr,osm,postgis,raster,shape,sqlite \
-CC=/usr/bin/clang \
-CXX=/usr/bin/clang++ \
-CUSTOM_CXXFLAGS="-fvisibility-inlines-hidden -fvisibility=hidden" \
+CXX=$(if [ -f "/usr/bin/clang++-3.5" ]; then echo "/usr/bin/clang++-3.5"; elif [ -f "/usr/bin/clang++-3.4" ]; then echo "/usr/bin/clang++-3.4"; else echo "clang++"; fi;) \
 CAIRO=True \
 COLOR_PRINT=False \
 DEMO=True \
