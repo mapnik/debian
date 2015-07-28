@@ -88,14 +88,6 @@ Depends:
  libmapnik (= ${binary:Version})
 Description: Mapnik SQLite input plugin for reading vector data in sqlite3 or spatialite databases.
 
-Package: mapnik-input-plugin-osm
-Architecture: any
-Depends:
- ${shlibs:Depends},
- ${misc:Depends},
- libmapnik (= ${binary:Version})
-Description: Mapnik OSM input plugin for reading OSM data out of XML.
-
 Package: libmapnik-dev
 Section: libdevel
 Architecture: any
