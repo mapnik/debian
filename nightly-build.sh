@@ -44,11 +44,11 @@ PACKAGES["2.0.x"]="mapnik"
 
 # Ubuntu Distributions to build (space-separated)
 declare -A DISTS
-DISTS["master"]="trusty utopic saucy precise"
-DISTS["2.3.x"]="trusty saucy precise lucid utopic"
-DISTS["2.2.x"]="trusty saucy precise lucid utopic"
-DISTS["2.1.x"]="trusty saucy precise lucid utopic"
-DISTS["2.0.x"]="trusty saucy precise lucid utopic"
+DISTS["master"]="trusty utopic saucy precise vivid"
+DISTS["2.3.x"]="trusty saucy precise lucid utopic vivid"
+DISTS["2.2.x"]="trusty saucy precise lucid utopic vivid"
+DISTS["2.1.x"]="trusty saucy precise lucid utopic vivid"
+DISTS["2.0.x"]="trusty saucy precise lucid utopic vivid"
 
 ######### Shouldn't need to edit anything past here #########
 
