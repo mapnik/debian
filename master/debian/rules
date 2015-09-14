@@ -43,8 +43,10 @@ override_dh_prep:
 
 override_dh_install:
 	JOBS=2 make install
+	mkdir -p $(CURDIR)/debian/tmp/usr/lib/mapnik/input/csv/
 	mkdir -p $(CURDIR)/debian/tmp/usr/lib/mapnik/input/geojson/
 	mkdir -p $(CURDIR)/debian/tmp/usr/lib/mapnik/input/topojson/
+	touch $(CURDIR)/debian/tmp/usr/lib/mapnik/input/csv/placeholder.txt
 	touch $(CURDIR)/debian/tmp/usr/lib/mapnik/input/geojson/placeholder.txt
 	touch $(CURDIR)/debian/tmp/usr/lib/mapnik/input/topojson/placeholder.txt
 	dh_install
