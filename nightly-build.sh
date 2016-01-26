@@ -125,6 +125,7 @@ for BRANCH in ${BRANCHES_TO_BUILD}; do
     pushd git
     git checkout "$BRANCH"
     git merge --ff-only "origin/${BRANCH}"
+    git submodule update --init
     REV="$(git log -1 --pretty=format:%h)"
     if [ ! -f "../${BRANCH}/prev.rev" ]; then
        echo > "../${BRANCH}/prev.rev";
