@@ -16,7 +16,7 @@ to the Mapnik nightly build PPAs at https://launchpad.net/~mapnik
 ## Requirements
 
 ```
-sudo apt-get install debhelper devscripts dput git-core python
+sudo apt-get install debhelper devscripts dput git-core python scons
 ```
 
 ## Setting up
